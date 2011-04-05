@@ -1,6 +1,10 @@
 h1. Introduction
 
-  TODO:
+  TODO: introduce cloud services/fog/etc
+
+h2. Agenda
+
+  TODO: add agenda
 
 h4. Next!
 

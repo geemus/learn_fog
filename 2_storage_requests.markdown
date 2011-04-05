@@ -54,6 +54,8 @@ h3. Start Your Engines
 
 Now we can take what we have learned to fill in the `?` and create our bucket.
 
+  TODO: explain how to fill in this blank.
+
     ...
     > connection.put_bucket(?)
     !

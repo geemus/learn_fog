@@ -1,14 +1,3 @@
-red dirt presentation
-  introduction - what is fog, what will we cover, agenda, etc
-  documentation - details how to teach yourself about docs
-  requests - start with mocked requests: s3 then rackspace (show api docs and give an overview of how to navigate them)
-    go in to more depth on how to fill in the first ? in storage_requests
-  models - move into mocked models and discuss what is and is not shared in the api. adapt previous examples to accommodate
-    emphasize power of generic models
-    make sure models example makes explicit the relation to requests
-  local - use models to drive both sets of mocks but then transition to real local; explore how it is models only and why
-    for local storage example actually create a file (maybe html) then explicitly browse
-
 virtualbox! for setup (ie have an image that has everything pre-installed) see engine45.com
 
 slides should accompany with really explicit steps (but not too much detail)
