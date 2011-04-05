@@ -1,0 +1,16 @@
+red dirt presentation
+  init - what is fog, what will we cover, agenda, etc
+  setup - unpack files, checkout out contents, install the gem
+  documentation - 
+  requests - start with mocked requests: s3 then rackspace (show api docs and give an overview of how to navigate them)
+  models - move into mocked models and discuss what is and is not shared in the api. adapt previous examples to accommodate
+  local - use models to drive both sets of mocks but then transition to real local; explore how it is models only and why
+
+slides should accompany with really explicit steps (but not too much detail)
+
+virtualbox! for setup (ie have an image that has everything pre-installed) see engine45.com
+go in to more depth on how to fill in the first ? in storage_requests
+emphasize power of generic models
+make sure models example makes explicit the relation to requests
+for local storage example actually create a file (maybe html) then explicitly browse
+recruit TA's to help out
