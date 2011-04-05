@@ -1,14 +1,10 @@
 h1. Models
 
-Time to dig back into the code, this time we want to look at `storage/local`. You will see that in this case we are doing things locally so there are no requests (or mocks).  So this time around we will really be storing things.
-
-h2. Setup
-
-    $ mkdir ?
+Time to dig back into the code, refer back to `storage/aws`, it is now time for us to dig into the `collections` and `models`.
 
 h2. Collections
 
-Just like last time, the first thing we will need is something to contain our file. Rather than trying to use 'bucket' or 'container' or any of the other words cloud providers uses fog uses the more generic 'directory'.  So the directories collection represents all of the directories you have created inside your specified `local_root`.  It has a number of methods to help you manage directories, which we will experiment with now.
+Just like last time, the first thing we will need is something to contain our file. Rather than trying to use 'bucket' or 'container' or any of the other words cloud providers uses fog uses the more generic 'directory'.  So the directories collection represents all of the directories you have created.  It has a number of methods to help you manage directories, which we will experiment with now.
 
     $ irb -r rubygems -r fog
     > Fog.mock!

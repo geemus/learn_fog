@@ -10,13 +10,13 @@ h3. Developer Guide
 
 The developer guides for amazon services provide a good overview of how to do various tasks without having to dig into the nitty gritty right away.
 
-TODO
+  TODO
 
 h3. API Documentation
 
 Now, with that overview in hand we can go over to the api documentation to see the specifics.
 
-TODO
+  TODO
 
 h2. Back in the fog
 
