@@ -8,7 +8,7 @@ Cloud services have a few important points that distinguish them.  First, they a
 
 h2. fog
 
-fog comes into the picture by interfacing with these various services and working to simplify the process of using them (and even migrating between them). By doing so it makes it easier to evaluate services to find the best fit and get up and running while avoiding the significant up front investment to knowledge gathering this might otherwise entail. For the rest of our time today we will explore some of these services and how fog can make it easier for us to interact with them.
+fog comes into the picture by interfacing with these various services and working to simplify the process of using them (and migrating between them). By doing so it makes it easier to evaluate services to find the best fit and get up and running while avoiding the significant up front investment to knowledge gathering this might otherwise entail. For the rest of our time today we will explore some of these services and how fog can make it easier for us to interact with them.
 
 h2. Agenda
 
