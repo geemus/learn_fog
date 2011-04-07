@@ -40,7 +40,7 @@ Now that we have had an opportunity to explore we can go see what makes this ser
 
 h2. Storage specific actions:
 
-So far we have used methods of `collections` and `models` that are common across services.  We can see some an example of utilizing these common parts in the examples at `learn_fog/source/examples/storage_tests` or by checking out the shared tests at `learn_fog/tests/storage/models/*`.  In both cases you can see that the tests are actually run with all of the providers, so you should feel confident that unlike when using requests, things that are written with the shared models should interoperate.
+So far we have used methods of `collections` and `models` that are common across services.  We can see some an example of utilizing these common parts in the examples at `learn_fog/source/examples/storage_tests` or by checking out the shared tests at `learn_fog/tests/storage/models/*`.  In both cases you can see that the tests are actually run with all of the providers, so you should feel confident that unlike when using requests, things that are written with the shared models should interoperate, in fact these examples serve as an example of best practices for interoperability.
 
 * What additional methods are available for storage providers?
 * What do these methods do?
