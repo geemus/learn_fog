@@ -31,16 +31,21 @@ And just like we can check our filesystem for a folder we can check to make sure
 
 h2. Nitty Gritty
 
-Now that we have had an opportunity to explore we can go see what makes this service tick.  The files in question are in `learn_fog/source/lib/fog/storage/models/aws`
+Now that we have had an opportunity to explore we can go see what makes this service tick.  The files in question are in `learn_fog/source/lib/fog/storage/models/aws`.  Just like before we will want to look at `directories` and `directory`
 
-  todo: exploring model files, explaining no requests and no mocks?
+* How do the available methods compare to the AWS models?
+* How do these work?
+* Where are the requests?
+* How about mocking?
 
 h2. Storage specific actions:
 
-  todo: emphasis power of generic models/abstraction
-  todo: cover examples
+So far we have used methods of `collections` and `models` that are common across services.  We can see some an example of utilizing these common parts in the examples at `learn_fog/source/examples/storage_tests` or by checking out the shared tests at `learn_fog/tests/storage/models/*`.  In both cases you can see that the tests are actually run with all of the providers, so you should feel confident that unlike when using requests, things that are written with the shared models should interoperate.
 
-Storage has some methods common methods across services other than just the basics of `collections` and `models`.  We can see some an example of utilizing these common parts in the examples at `learn_fog/source/examples/storage_tests` or by checking out the shared tests at `learn_fog/tests/storage/models/*`.  In both cases you can see that the tests are actually run with all of the providers, so you should feel confident that unlike when using requests, things that are written with the shared models should interoperate.
+* What additional methods are available for storage providers?
+* What do these methods do?
+* How do these methods work?
+* Try these methods with Local and mock AWS.
 
 h2. Next!
 
@@ -48,4 +53,4 @@ Now that you have a good handle on storage we will take a foray into the magical
 
 h3. Extra Credit
 
-  todo: explore other mocked providers, virtualbox and/or real providers if accounts/internet allows.
+Now that you have a good handle on `Mock` and `Real` as well as `requests`, `collections` and `models`, it would be a great time to explore some of the other storage services.  Which ones do and do not work in mocked?  How do the models differ?  How do the requests differ?
