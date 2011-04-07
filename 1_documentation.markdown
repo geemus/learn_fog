@@ -1,24 +1,25 @@
 h1. Documentation
 
-Your first task will be to practice storing data, but first we will explore how to find information on tasks in documentation.
+Our first task will be storing data, but we will explore the documentation to find out how.
 
 h2. Amazon Simple Storage Solution (S3)
 
-We will be using S3 to store a file, I usually fall back to the internet to find collected [Amazon S3 documentation](http://aws.amazon.com/documentation/s3). But rather than messing with that there should also be a copy of the relevant documents in your unzipped resources at `learn_fog/documentation/s3/developer_guide` and `learn_fog/documentation/s3/api_documentation`.
+We will be using S3 to store a file, I usually fall back to the internet to find collected [S3 documentation](http://aws.amazon.com/documentation/s3). But for convenience there is also a copy of the relevant documents in your unzipped resources at `learn_fog/s3-api.pdf`.
 
 h3. Amazon API Guide
 
-The API guides for amazon services provide details on available operations. Our first task will be to create something to hold our files, something S3 refers to as a bucket.
+The API guides for amazon services provide details on available operations. We will first create something to hold our files, something S3 refers to as a bucket.
 
 * Open `learn_fog/s3-api.pdf`
 * Browse to the table of contents.
 * What operations are available for buckets?
 * Browse to the operation that seems most likely to create a bucket.
 * Which parameters are required? Which are optional?
+* What other operations are available on buckets?
 
 h3. fog Services
 
-fog `services` wrap around services that clouds provide. We will want to check out the service that maps to S3, which lives with the other storage services. You can find it by opening `learn_fog/source/lib/fog/storage/aws.rb`, you will refer back to it for the next two sections.
+fog `services` wrap around the services that clouds provide. We will want to check out the service that maps to S3, which lives with the other storage services. You can find it by opening `learn_fog/source/lib/fog/storage/aws.rb`, you will refer back to it for the next two sections.
 
 h3. Requests
 
@@ -40,9 +41,13 @@ h3. Mock
 
 We will be using the version of the method in the `Mock` module, however, since we don't have proper credentials.  You can refer back to the `Real` documentation block for what parameters you can also pass to the `Mock` version, but if you look at the method itself you can see it is quite different.  Rather than making a request out to S3, the mocked method just uses the data to update a hash in memory that represents what commands you have run.
 
-h2. Back in the fog
+h3. http://fog.io
 
-In `1_storage_requests.html` we will explore connecting to a service and start storing our important data!
+  todo: run through using jekyll locally to view the files, etc
+
+h2. Next!
+
+In `2_storage_requests.html` we will explore connecting to a service and start storing our important data!
 
 h3. Extra Credit
 

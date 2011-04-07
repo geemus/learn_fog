@@ -50,7 +50,8 @@ These collections may start empty, but generally when you are working with them 
 h2. How?
 
 You can always follow the model_path from the service to find the model files and cross reference how things work.  You should note that just like we did before, `models` rely on `requests` to do their job.  This allows them to hook into the mocking infrastructure as well, but it also means that if there is ever anything that the models do not provide you are still free to use `requests`.  Plus this provides a great place to see examples of the `requests` in action.
-  TODO: add example to explicitly tie models back in with requests
+
+  todo: add example to explicitly tie models back in with requests
 
 h2. Files.
 
@@ -83,12 +84,6 @@ h2. Cleaning Up
 
     > directory.destroy
     !
-
-h2. Storage specific actions:
-
-  TODO: emphasis power of generic models/abstraction
-
-Storage has some methods common methods across services other than just the basics of `collections` and `models`.  We can see some an example of utilizing these common parts in the examples at `learn_fog/source/examples/storage_tests` or by checking out the shared tests at `learn_fog/tests/storage/models/*`.  In both cases you can see that the tests are actually run with all of the providers, so you should feel confident that unlike when using requests, things that are written with the shared models should interoperate.
 
 h3. Extra Credit
 

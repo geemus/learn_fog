@@ -22,7 +22,7 @@ h2. Agenda
 
 h2. Setup
 
-  TODO: describe steps to setup
+  todo: describe steps to setup
 
 h4. Next!
 
