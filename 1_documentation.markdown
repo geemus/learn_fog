@@ -43,7 +43,17 @@ We will be using the version of the method in the `Mock` module, however, since 
 
 h3. http://fog.io
 
-  todo: run through using jekyll locally to view the files, etc
+A great place to find consolidated information is on [fog.io](http://fog.io), but all that info is also available in the source.
+
+    $ cd learn_fog/sources/docs
+
+The front page is `index.html` and the _pages directory contains the other related pages. You can view the output by using `jekyll`.
+
+    ...
+    > jekyll --server
+    !
+
+Once the server boots up it will tell you a localhost url where you can browse to in order to view the documents.  By doing this you can more easily update docs and see your changes (especially with the -auto option for reloading changed files).
 
 h2. Next!
 
