@@ -1,8 +1,8 @@
-h1. Requests
+# Requests
 
 In fog `requests` map to the actual API calls that are necessary to carry out your tasks in the cloud.  We'll start by finding the files related to S3.  The first place to look for a shared service is with it's companions.  Since we are interested in storing data we will want to explore the storage providers at `learn_fog/source/lib/fog/storage/`.  There you will see a number of files and folders, we will first look at S3, which is part of the AWS provider.
 
-h3. Once More With <strike>Feeling</strike> Code!
+### Once More With <strike>Feeling</strike> Code!
 
 So lets boot up an irb session and get started.
 
@@ -24,21 +24,21 @@ Finally we can connect to the service.
     > Fog::Storage.new(:provider => 'AWS')
     !
 
-h3. Connection Parameters
+### Connection Parameters
 
 The first thing you will need to know is how to connect to the service. You should have just seen an error that will tell you what you left out, but you can also find this information in the code. If we jump back to the service file you will notice the `requires` and `recognizes`. These represent what properties are needed to connect to the service and what optional attributes can also be provided. In our case we now know we will need to set `aws_access_key_id` and `aws_secret_access_key`.
 
     > connection = Fog::Storage.new(:provider => 'AWS', :aws_access_key_id => 'fake_access_key_id', :aws_secret_access_key => 'fake_secret_access_key')
     !
 
-h2. Requests
+## Requests
 
 Just as we can find lists of requests in the service file, we can also find this out programmatically.
 
     > connection.requests
     !
 
-h2. Mocks
+## Mocks
 
 It is worth noting, however, that the coverage of mocks is not complete.  Some files have no mock implemented, for example `learn_fog/lib/fog/storage/requests/aws/put_bucket_website`.  It has no mock section what so ever, call it now to find out what happens in this case.
 
@@ -46,7 +46,7 @@ It is worth noting, however, that the coverage of mocks is not complete.  Some f
     > connection.put_bucket_website
     !
 
-h3. Start Your Engines
+### Start Your Engines
 
 So it was a long and winding road, but we should be plenty ready to create our bucket.  Refer back to the request method and you should have everything you need to fill in your first blank.  As we move forward remember how you got to this point because we will need to do it again.
 
@@ -54,11 +54,11 @@ So it was a long and winding road, but we should be plenty ready to create our b
     > connection.put_bucket(?)
     !
 
-h3. Responses
+### Responses
 
 fog uses Excon (a pure-Ruby HTTP library built for speed) for its requests so our mocks are setup to create faked Excon responses to emulate the Real behavior.  Each response will have seperated out the three key parts of an HTTP response. `status` will contain an integer representing what status code was returned. Next `headers` returns the meta information about the request parsed into a hash. Last `body` will contain the contents of the response (if any) parsed into a hash as well.
 
-h3. To the Races
+### To the Races
 
 Next we will repeat this process to create our object:
 
@@ -66,7 +66,7 @@ Next we will repeat this process to create our object:
     > connection.put_object(?)
     !
 
-h3. The Rest
+### The Rest
 
 That may be well and good, but how to we get back to this data later?  For that we will need `get_bucket` and `get_object` respectively. And although technically mocks are in memory and will therefore be cleaned up automatically, it is still good practice to do it manually, for that we'll need `delete_object` and `delete_bucket`.
 
@@ -85,10 +85,10 @@ That may be well and good, but how to we get back to this data later?  For that 
 
     > ?
 
-h2. Next!
+## Next!
 
 Now that we have seen how we can dig around to find out how to do low level things you can probably get a pretty good idea that swapping between providers might not be so easy.  Thankfully fog also has `collections` and `models` to ease the pain.  In `3_storage_models.html` we will use them to store data in our filesystems.
 
-h3. Extra Credit
+### Extra Credit
 
 Try following these same steps with the 'google' provider.  It is pretty similar, but you'll notice some subtle differences throughout, especially in non-mocked modes due to differing consistency promises.

@@ -1,12 +1,12 @@
-h1. Documentation
+# Documentation
 
 Our first task will be storing data, but we will explore the documentation to find out how.
 
-h2. Amazon Simple Storage Solution (S3)
+## Amazon Simple Storage Solution (S3)
 
 We will be using S3 to store a file, I usually fall back to the internet to find collected [S3 documentation](http://aws.amazon.com/documentation/s3). But for convenience there is also a copy of the relevant documents in your unzipped resources at `learn_fog/s3-api.pdf`.
 
-h3. Amazon API Guide
+### Amazon API Guide
 
 The API guides for amazon services provide details on available operations. We will first create something to hold our files, something S3 refers to as a bucket.
 
@@ -17,15 +17,15 @@ The API guides for amazon services provide details on available operations. We w
 * Which parameters are required? Which are optional?
 * What other operations are available on buckets?
 
-h3. fog Services
+### fog Services
 
 fog `services` wrap around the services that clouds provide. We will want to check out the service that maps to S3, which lives with the other storage services. You can find it by opening `learn_fog/source/lib/fog/storage/aws.rb`, you will refer back to it for the next two sections.
 
-h3. Requests
+### Requests
 
 First you'll see some `requires` and `recognizes`, followed by `collections` and `models`, but we will come back to all that later.  Our real goal is the requests, here you can see the path to them as well as a list of available requests.
 
-h3. fog requests
+### fog requests
 
 Most of the time you should be able to get by without needing to refer to those docs, but it can be a good skill to have in your bag of tricks. Next we will see how this documentation relates to the code in fog.
 
@@ -33,15 +33,15 @@ Most of the time you should be able to get by without needing to refer to those 
 * What arguments are required and optional for this method? (you can just focus on the `Real` version for now)
 * How does the documentation and method compare to the S3 documentation?
 
-h3. Real
+### Real
 
 In this file we can see that in the `Real` module there is a mirror to a lot of what we found before to remind us and help integrate our knowledge of S3 into it's usage in fog. The first part documents the function, starting with a brief description of the methods purpose, followed by a breakdown of the parameters and finally the return value. After this you will see the method itself, which will define what data to send.  This data is all quite useful, but for now we will rely on the `Mock` implementation, so we can skip to that.
 
-h3. Mock
+### Mock
 
 We will be using the version of the method in the `Mock` module, however, since we don't have proper credentials.  You can refer back to the `Real` documentation block for what parameters you can also pass to the `Mock` version, but if you look at the method itself you can see it is quite different.  Rather than making a request out to S3, the mocked method just uses the data to update a hash in memory that represents what commands you have run.
 
-h3. http://fog.io
+### http://fog.io
 
 A great place to find consolidated information is on [fog.io](http://fog.io), but all that info is also available in the source.
 
@@ -55,10 +55,10 @@ The front page is `index.html` and the _pages directory contains the other relat
 
 Once the server boots up it will tell you a localhost url where you can browse to in order to view the documents.  By doing this you can more easily update docs and see your changes (especially with the -auto option for reloading changed files).
 
-h2. Next!
+## Next!
 
 In `2_storage_requests.html` we will explore connecting to a service and start storing our important data!
 
-h3. Extra Credit
+### Extra Credit
 
 What is the `mock` implementation doing?  How will you delete the bucket?

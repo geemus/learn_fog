@@ -1,8 +1,8 @@
-h1. Compute
+# Compute
 
 Now that we have had a pretty thorough overview of storage services we will jump over and try our hand at compute.  Thankfully you will be able to reuse a lot of what you have already learned.
 
-h2. Setting Up
+## Setting Up
 
 We will go back to using mock aws as our provider, but we will use a compute service this time. This will provide a simulation of Amazon's Elastic Compute Cloud (EC2).
 
@@ -19,7 +19,7 @@ This should look very familiar (in fact, the only real change is substituting `C
     > connection.collections
     !
 
-h2. Configuring Your Server
+## Configuring Your Server
 
 Unfortunately, unlike working with storage, compute setup can be pretty complicated at times. You have the resources now to look up why this stuff needs to happen, but for now I will give you the run down.
 
@@ -55,7 +55,7 @@ Unfortunately, unlike working with storage, compute setup can be pretty complica
     > key_pair.destroy
     !
 
-h2. Compute Specifics
+## Compute Specifics
 
 Just like in the storage case, compute also has a number of specific methods to it.  Unfortunately, since I am still in the process of nailing down some of this stuff (as you saw this is a harder problem than storage) there is no set of examples for it.  You can learn a lot, however, by looking at the tests in `tests/compute/models/`.  The main one we really care about, though, is `bootstrap`.
 
@@ -70,10 +70,10 @@ Just like in the storage case, compute also has a number of specific methods to 
 * How is this used by setup?
 * How can you use this to call commands on the server?
 
-h2. Next!
+## Next!
 
 Last, but certainly not least, we will wrap up with some highlights and suggestions for how to continue your learning followed by some time for questions.
 
-h3. Extra Credit
+### Extra Credit
 
 There are a lot of compute providers, check and see how they differ and how they are the same.

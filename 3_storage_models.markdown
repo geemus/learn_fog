@@ -1,8 +1,8 @@
-h1. Models
+# Models
 
 Time to dig back into the code, refer back to `storage/aws`, it is now time for us to dig into the `collections` and `models`.
 
-h2. Collections
+## Collections
 
 Just like last time, the first thing we will need is something to contain our file. Rather than trying to use 'bucket' or 'container' or any of the other words cloud providers uses fog uses the more generic 'directory'.  So the directories collection represents all of the directories you have created.  It has a number of methods to help you manage directories, which we will experiment with now.
 
@@ -21,7 +21,7 @@ Just like last time, the first thing we will need is something to contain our fi
     > connection.directories.all
     !
 
-h2. Models
+## Models
 
 These collections may start empty, but generally when you are working with them they will contain one or more `directory` `models`, which also have a number of helpful methods.  If we open up `learn_fog/source/lib/fog/storage/models/aws/directory.rb` we can see what this looks like.  We can see the various methods that are defined, see what value is used for identity and what attributes are used in general.
 
@@ -47,11 +47,11 @@ These collections may start empty, but generally when you are working with them 
     > directory = connection.directories.create(:key => ?)
     !
 
-h2. How?
+## How?
 
 You can always follow the model_path from the service to find the model files and cross reference how things work.  You should note that just like we did before, `models` rely on `requests` to do their job.  This allows them to hook into the mocking infrastructure as well, but it also means that if there is ever anything that the models do not provide you are still free to use `requests`.  Plus this provides a great place to see examples of the `requests` in action.  Now we will explore these files a bit to see how this works.
 
-h3. Collections
+### Collections
 
 The first thing we will look at is `collections`.  You may have noticed that as we were working through things earlier you would usually refer to `directories` but that they were composed of and often returned one or more `directory`.  We will start by looking at the collection.  Open `learn_fog/source/storage/models/aws/directories.rb`.
 
@@ -60,7 +60,7 @@ The first thing we will look at is `collections`.  You may have noticed that as 
 * Look at `all` and `get`, there is some extra helper code but at their core they should look pretty familiar to you.
 * Notice that there is no `Real` vs `Mock` distinction. It is not needed at this level because it can piggy back on the requests.
 
-h3. Models
+### Models
 
 Now we can look at the `model` that this collection refered to. Models have a bit more going on, but we will walk through it now.
 
@@ -69,7 +69,7 @@ Now we can look at the `model` that this collection refered to. Models have a bi
 * `save` builds up options from the attributes and then calls a request, this should look very familiar to you.
 * What about `create`? This is really just `new` followed by `save`, to validate this you can check out the model parent class at `learn_fog/source/lib/fog/core/model.rb`
 
-h2. Files.
+## Files.
 
 Nested inside each directory is a files collection, with much the same methods as the directory itself. You can open up the file to browse, or just experiment and let the errors guide your way.
 
@@ -92,7 +92,7 @@ Nested inside each directory is a files collection, with much the same methods a
     > directory.files.get(?)
     !
 
-h2. Cleaning Up
+## Cleaning Up
 
     ...
     > file.destroy
@@ -101,6 +101,6 @@ h2. Cleaning Up
     > directory.destroy
     !
 
-h3. Extra Credit
+### Extra Credit
 
 Setup a connection to the `Google` provider and work back through the above examples.  How does the output change?  What stays the same?
