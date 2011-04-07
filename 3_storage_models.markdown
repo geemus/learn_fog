@@ -49,9 +49,25 @@ These collections may start empty, but generally when you are working with them 
 
 h2. How?
 
-You can always follow the model_path from the service to find the model files and cross reference how things work.  You should note that just like we did before, `models` rely on `requests` to do their job.  This allows them to hook into the mocking infrastructure as well, but it also means that if there is ever anything that the models do not provide you are still free to use `requests`.  Plus this provides a great place to see examples of the `requests` in action.
+You can always follow the model_path from the service to find the model files and cross reference how things work.  You should note that just like we did before, `models` rely on `requests` to do their job.  This allows them to hook into the mocking infrastructure as well, but it also means that if there is ever anything that the models do not provide you are still free to use `requests`.  Plus this provides a great place to see examples of the `requests` in action.  Now we will explore these files a bit to see how this works.
 
-  todo: add example to explicitly tie models back in with requests
+h3. Collections
+
+The first thing we will look at is `collections`.  You may have noticed that as we were working through things earlier you would usually refer to `directories` but that they were composed of and often returned one or more `directory`.  We will start by looking at the collection.  Open `learn_fog/source/storage/models/aws/directories.rb`.
+
+* The first thing to notice is that this collection inherits from `Fog::Collection`.  You will not need to know to much more than that, but you can dig into if you would like at `learn_fog/source/lib/fog/core/collection.rb`.
+* Next up, see the call to `model`, this tells the collection what model to use when you call new and what model to map data into when you call all or get.
+* Look at `all` and `get`, there is some extra helper code but at their core they should look pretty familiar to you.
+* Notice that there is no `Real` vs `Mock` distinction. It is not needed at this level because it can piggy back on the requests.
+
+h3. Models
+
+Now we can look at the `model` that this collection refered to. Models have a bit more going on, but we will walk through it now.
+
+* At the start we can see `identity` to call out what attribute is the unique id of the object and `attributes` to declare what other values there are (and in some cases remap them from raw results or even typecast them)
+* Next you will see a number of other methods that should again look familiar, in particular lets look at `save`.
+* `save` builds up options from the attributes and then calls a request, this should look very familiar to you.
+* What about `create`? This is really just `new` followed by `save`, to validate this you can check out the model parent class at `learn_fog/source/lib/fog/core/model.rb`
 
 h2. Files.
 

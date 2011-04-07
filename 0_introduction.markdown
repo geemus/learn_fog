@@ -22,7 +22,7 @@ h2. Agenda
 
 h2. Setup
 
-  todo: describe steps to setup
+For the setup you will get a copy of `learn_fog.zip`, which we will unpack to find the rest of the files you need and instructions on how to use them.
 
 h4. Next!
 
