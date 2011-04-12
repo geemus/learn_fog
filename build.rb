@@ -5,6 +5,10 @@ files = Dir.glob('*.markdown')
 
 Formatador.display_line
 
+unless File.exists?('_site')
+  Dir.mkdir('_site')
+end
+
 files.each do |file|
   filename, _ = file.split('.', 2)
   Formatador.redisplay("Building: #{filename}")
