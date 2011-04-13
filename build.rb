@@ -11,6 +11,7 @@ if File.exists?('pkg')
 end
 Dir.mkdir('pkg')
 Dir.mkdir('pkg/learn_fog')
+Dir.mkdir('pkg/learn_fog/slides')
 
 # compile the markdown files
 Dir.glob('*.markdown').each do |file|
@@ -25,24 +26,32 @@ Dir.glob('*.markdown').each do |file|
 end
 
 # copy files from resources
-Dir.glob('resources/*').each do |file|
-  Formatador.redisplay("Copying: #{file}")
-  FileUtils.cp_r(Dir.glob('resources/*'), 'pkg/learn_fog')
-end
+Formatador.redisplay("Copying: resources")
+FileUtils.cp_r(Dir.glob('resources/*'), 'pkg/learn_fog')
+
+# build slides
+Formatador.redisplay("Building Slides")
+Dir.chdir('slides')
+`bundle exec showoff static &> /dev/null`
+Dir.chdir('..')
+Formatador.redisplay("Moving: slides")
+`mv slides/static/* pkg/learn_fog/slides`
 
 # package gems
 Formatador.redisplay("Packaging Gems")
 `BUNDLE_GEMFILE='#{File.expand_path(Dir.pwd)}/pkg/learn_fog/Gemfile' bundle package`
 
-
 # checkout a copy of source
 Formatador.redisplay("Cloning Source")
 Dir.chdir('pkg/learn_fog')
 `git clone -q git://github.com/geemus/fog.git source`
+Dir.chdir('../..')
 
 # package learn_fog
 Formatador.redisplay("Packaging")
-Dir.chdir('..')
+Dir.chdir('pkg')
 `tar -zcvf learn_fog.tar.gz learn_fog`
+Dir.chdir('..')
 
+Formatador.redisplay("Build Complete!")
 Formatador.display_lines(['',''])
