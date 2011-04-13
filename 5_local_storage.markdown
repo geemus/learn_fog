@@ -8,12 +8,10 @@ First, create a directory to use for our local store.
 
     $ mkdir ?
 
-Now connect to the service and let fog know where this directory is (note: no mock! this time)
+Now open up `~/.fog` and add a key for `:local_root:` with this directory. Now you are ready to connect to the service.
 
-TODO: rewrite to use fog binary
-
-    $ irb -r rubygems -r fog
-    > connection = Fog::Storage.new(:provider => 'Local', :local_root => '?')
+    $ bundle exec fog
+    > connection = Local[:storage]
     !
 
 ## Storing and Retreiving Files
@@ -39,8 +37,6 @@ Now that we have explored we will see what makes this service tick. The files in
 * Where are the requests?
 * How about mocking?
 
-TODO: Expand?
-
 ## Storage specific actions:
 
 So far we have used methods of `collections` and `models` that are common across services.  We can see examples of utilizing these common parts in the examples at `learn_fog/source/examples/storage_tests` or by checking out the shared tests at `learn_fog/tests/storage/models/*`.  In both cases you can see that the tests are actually run with all of the providers, so you should feel confident that unlike when using requests, things that are written with the shared models should interoperate, in fact these examples serve as an example of best practices for interoperability.
@@ -48,11 +44,14 @@ So far we have used methods of `collections` and `models` that are common across
 * What additional methods are available for storage providers?
 * What do these methods do?
 * How do these methods work?
-* Try these methods with Local and mock AWS.
+* Try these methods with Local and `Mock` AWS.
 
-TODO: Expand?
+## Highlights
 
-TODO: Highlights
+* Storage can connect to different services and will continue to work largely the same.
+* Local storage provides a way to emulate cloud storage behavior on your local filesystem.
+* Local storage is defined at the model level and has no mocking.
+* Storage has some specific capabilities that differ from core fog, these can be explored in the shared examples and tests.
 
 ## Next!
 
@@ -60,4 +59,9 @@ Now that you have a good handle on storage we will take a foray into the magical
 
 ### Extra Credit
 
-Now that you have a good handle on `Mock` and `Real` as well as `requests`, `collections` and `models`, it would be a great time to explore some of the other storage services.  Which ones do and do not work in mocked?  How do the models differ?  How do the requests differ?
+Now that you have a good handle on `Mock` and `Real` as well as `requests`, `collections` and `models`, it would be a great time to explore some of the other storage services.
+
+* Explore other services.
+* Which ones do and do not work in mocked?
+* How do the models differ?
+* How do the requests differ?

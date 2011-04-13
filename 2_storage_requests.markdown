@@ -1,12 +1,10 @@
 # Storage Requests
 
-TODO: what is cloud storage?
-
 We will be using irb to experiment. `?` will designate a blank you should fill in and `!` will represent some output you should check out. We will return to this setup many times so you will save time and trouble if you leave the irb session open somewhere.
 
 First we will boot irb and require fog.
 
-    $ irb
+    $ bundle exec irb
     > require 'rubygems'
     > require 'fog'
 
@@ -75,16 +73,16 @@ That may be well and good, but how to we return to this data later?  For that we
     > connection.delete_object(?)
     !
 
-TODO: highlights
+## Highlights
+
+* `Fog::Storage` provides the capability to connect to various cloud storage providers.
+* By referring to the service documentation, the definition of the service in fog, or by calling `requests` we can see what requests are available.
+* Calling methods that have no mock implementation will raise an error declaring that the mock is undefined.
 
 ## Next!
-
-TODO: explicit example of doing this with a different service (it can be written out rather than a problem to work through)
 
 Now that we have seen how to dig around and do low level things you can probably imagine that swapping between providers might not be so easy.  Thankfully fog also has `collections` and `models` to ease the pain.  In `3_storage_models.html` we will use them to repeat these basic operations in a more universal way.
 
 ### Extra Credit
 
 * Try following these same steps with the 'google' provider.  It is pretty similar, but you'll notice some subtle differences throughout, especially in non-mocked modes due to differing consistency promises.
-
-TODO: expand

@@ -1,31 +1,23 @@
 # Compute Models
 
-TODO: What is compute?
+Cloud compute provides the capability to request remote compute power as it is needed. We will use a `mock` provider to explore how to use these resources.
 
 ## Setup
 
 We will go back to using mock aws as our provider, but we will use a compute service this time. This will provide a simulation of Amazon's Elastic Compute Cloud (EC2).
 
-TODO: rewrite with fog binary
-
-    $ irb
-    > require 'rubygems'
-    > require 'fog'
-    > Fog.mock!
-    > connection = Fog::Compute.new(:provider => 'AWS', :aws_access_key_id => 'fake_access_key_id', :aws_secret_access_key => 'fake_secret_access_key')
+    $ FOG_MOCK=true bundle exec fog
+    > connection = AWS[:compute]
     !
 
 This should look very familiar (in fact, the only real change is substituting `Compute` for `Storage`). You can use requests, just like before to get an overview of these.  But this time around we are going to skip right to the models, after all if you need to you now know how to look up information about requests and back track through the models if needed.  That being said, there are a lot more collections and they are much different than they were before. We can use the collections method to grab a list of them.
 
-    ...
     > connection.collections
     !
 
 ## Configuring Your Server
 
-TODO: vendor/reference EC2 api docs
-
-Unfortunately, compute can be more complicated than storage. You have the resources now to look up why this stuff needs to happen, but for now I will give you the run down.
+Unfortunately, compute can be more complicated than storage. You can refer to `learn_fog/ec2-api.pdf` or the code to see how to do things, but for the sake of time I will give you the short version.
 
 Create a key_pair, this is what will allow you to ssh into the server later.  You can either specify a public key or leave it blank (in which case you will get a private key returned to you).
 
@@ -70,7 +62,11 @@ Just like storage, compute has a number of specific methods. You can learn a lot
 * How is this used by setup?
 * How can you use this to call commands on the server?
 
-TODO: highlights
+## Highlights
+
+* fog has a Compute services that can connect to many different providers and operate similarly.
+* Compute resources are more complicated to work with but the interface and resources are familiar.
+* Specific methods which seek to reduce complexity are available for compute that can be found in shared tests.
 
 ## Next!
 
@@ -79,4 +75,3 @@ Last, but certainly not least, we will wrap up with some highlights and suggesti
 ### Extra Credit
 
 * There are a lot of compute providers, check and see how they differ and how they are the same.
-TODO: expand/elaborate

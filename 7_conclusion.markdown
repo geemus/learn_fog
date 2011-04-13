@@ -14,7 +14,7 @@ Now that you have an understanding about how these peices fit together there are
 * Contribute to your favorite services or add one that was left out
 * Report issues and submit pull requests
 * Spread the love by sharing your cloud experiences with friends and peers. Blog posts and talks (lightning or otherwise) are great ways to share you experiences and educate others.
-
-TODO: Expand?
+* Proudly display stickers.
+* Earn contributer (grey) and commiter (black) shirts!
 
 ## Questions?

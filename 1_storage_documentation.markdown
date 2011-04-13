@@ -1,6 +1,6 @@
 # Documentation
 
-Our first task will be storing data, but first we will figure out how by referencing the services documentation.
+Cloud storage provides the capability of uploading files to a persistent remote store that will automatically handle keeping this data safe and available. Our first task will use this to store data, but first we will figure out how by referencing the services documentation.
 
 ## Amazon Simple Storage Solution (S3)
 
@@ -50,7 +50,13 @@ Another great place to find consolidated information is on [fog.io](http://fog.i
 
 The front page is `index.html` and other pages can be navigated to from there.
 
-TODO: highlights
+## Highlights
+
+* Cloud services provide documentation about how to use their services.
+* fog `requests` map closely to the services API calls and mirrors their documentation.
+* `Real` methods actually make API calls.
+* `Mock` methods update an in-memory representation of service state.
+* [fog.io](http://fog.io) collects available documentation and resources.
 
 ## Next!
 

@@ -6,7 +6,7 @@ Time to dig back into the code, refer back to `storage/aws`, but this time we wi
 
 Just like last time, the first thing we need is something to contain our file. fog calls this a `directory`, and the `directories` collection represents all of these you have created. It has a number of methods to help you manage directories, which we will experiment with now.
 
-    $ irb -r rubygems -r fog
+    $ bundle exec irb -r rubygems -r fog
     > Fog.mock!
     > connection = Fog::Storage.new(:provider => 'AWS', :aws_access_key_id => 'fake_access_key_id', :aws_secret_access_key => 'fake_secret_access_key')
     > connection.directories
@@ -55,10 +55,6 @@ You may have noticed that as we were working through things earlier you would us
 * Notice that there is no `Real` vs `Mock` distinction. It is not needed at this level because it can piggy back on the requests.
 * `directories` inherits from `Fog::Collection`. You will not need to know to much more than that, but you can dig into if you would like at `learn_fog/source/lib/fog/core/collection.rb`.
 
-TODO: shared tests
-
-TODO: discussion of core collection and methods
-
 ### Directory
 
 Now we can look at the `model` that this collection refered to. Models have more going on, but we will walk through it now.
@@ -66,18 +62,14 @@ Now we can look at the `model` that this collection refered to. Models have more
 * At the start we can see `identity` specifies what attribute is the unique id of the object and subsequent `attribute` calls to declare what other values there are (and in some cases remap them from raw results and/or typecast them)
 * Next you will see a number of other methods that should look familiar, in particular look at `save`.
 * `save` builds up options from the attributes and then calls a request, just as we did.
-
-TODO: shared tests
-
-TODO: discussion of core attributes
-
-TODO: discussion of core model and methods
-
 * What about `create`?
 
 ## Files.
 
 Nested inside each `directory` is a `files` `collection`, with much the same methods as the directory itself. You can open up the file to browse, or just experiment and let errors guide the way.
+
+    > file = directory.files.create
+    !
 
     > file = directory.files.create(?)
     !
@@ -105,7 +97,11 @@ Nested inside each `directory` is a `files` `collection`, with much the same met
     > directory.destroy
     !
 
-TODO: highlights
+## Highlights
+
+* Models provide a high level abstraction on top of requests.
+* Collections provide the main interface and represent a group of objects.
+* The `model` abstraction is easier to use and provides feedback about wrong usage.
 
 ## Next!
 
@@ -116,5 +112,3 @@ Now that we have done this from scratch in irb a couple times we will see how we
 * Setup a connection to the `Google` provider and work back through the above examples.
 * How does the output change?
 * What stays the same?
-
-TODO: more?
