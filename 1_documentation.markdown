@@ -1,64 +1,64 @@
 # Documentation
 
-Our first task will be storing data, but we will explore the documentation to find out how.
+Our first task will be storing data, but first we will figure out how by referencing the services documentation.
 
 ## Amazon Simple Storage Solution (S3)
 
-We will be using S3 to store a file, I usually fall back to the internet to find collected [S3 documentation](http://aws.amazon.com/documentation/s3). But for convenience there is also a copy of the relevant documents in your unzipped resources at `learn_fog/s3-api.pdf`.
+We will be using S3 to store a file, you can refer to docs at `learn_fog/s3-api.pdf` or online at [S3 documentation](http://aws.amazon.com/documentation/s3).
 
 ### Amazon API Guide
 
-The API guides for amazon services provide details on available operations. We will first create something to hold our files, something S3 refers to as a bucket.
+Amazon API guides provide details on available operations. We will first need to create something to hold our files, S3 refers to this as a bucket.
 
 * Open `learn_fog/s3-api.pdf`
 * Browse to the table of contents.
 * What operations are available for buckets?
 * Browse to the operation that seems most likely to create a bucket.
-* Which parameters are required? Which are optional?
+* Which parameters are required?
+* Which are optional?
 * What other operations are available on buckets?
 
 ### fog Services
 
-fog `services` wrap around the services that clouds provide. We will want to check out the service that maps to S3, which lives with the other storage services. You can find it by opening `learn_fog/source/lib/fog/storage/aws.rb`, you will refer back to it for the next two sections.
+Most of the time you should be able to get by without needing to refer to those docs, but it can be a good skill to have in your bag of tricks. Next we will see how this documentation relates to the code in fog.
+
+We will want to check out the `service` that maps to S3, which lives with the other storage services. You can find it by opening `learn_fog/source/lib/fog/storage/aws.rb`, you will refer back to it for the next two sections.
 
 ### Requests
 
-First you'll see some `requires` and `recognizes`, followed by `collections` and `models`, but we will come back to all that later.  Our real goal is the requests, here you can see the path to them as well as a list of available requests.
-
-### fog requests
-
-Most of the time you should be able to get by without needing to refer to those docs, but it can be a good skill to have in your bag of tricks. Next we will see how this documentation relates to the code in fog.
+First you will see some `requires` and `recognizes`, followed by `collections` and `models`, we will to these later. Our real goal is requests, you can see the `request_path` and a list of available requests.
 
 * Open the file corresponding to the request you found to create a bucket. You should be able to find it from its name in `learn_fog/source/lib/fog/storage/requests/aws/?`.
-* What arguments are required and optional for this method? (you can just focus on the `Real` version for now)
+* Find the method inside the `Real` module.
+* What arguments are required?
+* What arguments are optional?
 * How does the documentation and method compare to the S3 documentation?
 
 ### Real
 
-In this file we can see that in the `Real` module there is a mirror to a lot of what we found before to remind us and help integrate our knowledge of S3 into it's usage in fog. The first part documents the function, starting with a brief description of the methods purpose, followed by a breakdown of the parameters and finally the return value. After this you will see the method itself, which will define what data to send.  This data is all quite useful, but for now we will rely on the `Mock` implementation, so we can skip to that.
+We can see that there is a mirror to what we found before, which helps integrate our knowledge of S3 into usage in fog. The first part documents the function, starting with a brief description of purpose, followed by a breakdown of parameters and return value. After this you will see the `Real` method itself, which defines how data is sent. For now, we will review the `Mock` implementation, which we will be using in our examples.
 
 ### Mock
 
-We will be using the version of the method in the `Mock` module, however, since we don't have proper credentials.  You can refer back to the `Real` documentation block for what parameters you can also pass to the `Mock` version, but if you look at the method itself you can see it is quite different.  Rather than making a request out to S3, the mocked method just uses the data to update a hash in memory that represents what commands you have run.
+You can refer back to the `Real` documentation block for usage details, but if you look at the `Mock` method itself you can see it is quite different.  Rather than sending a request to S3, the `Mock` method updates a hash in memory that simulates the remote state.
 
 ### http://fog.io
 
-A great place to find consolidated information is on [fog.io](http://fog.io), but all that info is also available in the source.
+Another great place to find consolidated information is on [fog.io](http://fog.io), but all that info is also available in the source.
 
-    $ cd learn_fog/sources/docs
+    $ cd learn_fog/fog.io
 
-The front page is `index.html` and the _pages directory contains the other related pages. You can view the output by using `jekyll`.
+The front page is `index.html` and other pages can be navigated to from there.
 
-    ...
-    > jekyll --server
-    !
-
-Once the server boots up it will tell you a localhost url where you can browse to in order to view the documents.  By doing this you can more easily update docs and see your changes (especially with the -auto option for reloading changed files).
+TODO: highlights
 
 ## Next!
 
-In `2_storage_requests.html` we will explore connecting to a service and start storing our important data!
+In `2_storage_requests.html` we will explore connecting to a service and storing our data!
 
 ### Extra Credit
 
-What is the `mock` implementation doing?  How will you delete the bucket?
+* What data does the `mock` method modify?
+* How will you get rid of the bucket?
+* What does the associated `Real` method look like?
+* What data does the associated `Mock` method modify?
