@@ -1,6 +1,6 @@
 # Conclusion
 
-Now that you have experimented with several providers and services you should have a pretty good idea of what you are getting into when people talk about cloud.  You should be able to refer back to a services documentation to see suggested usage and trace (or build) your way through fog to a working solution.  You should be able to have tools and systems built on top of these solutions that can be evaluated on different platforms and migrated if the need arises. And most importantly of all you should feel empowered by the resources that are now, quite literally, at your fingertips.
+Now that you have experimented with several providers and services you should have a good foundation for working with cloud services. You should be able to refer back to a services documentation to see suggested usage and work your way through fog to a solution.  You can then build tools and systems on top to evaluate different platforms and migrate if the need arises. Most importantly you should feel empowered by the resources that are now, quite literally, at your fingertips.
 
 ## Next!
 
@@ -14,5 +14,7 @@ Now that you have an understanding about how these peices fit together there are
 * Contribute to your favorite services or add one that was left out
 * Report issues and submit pull requests
 * Spread the love by sharing your cloud experiences with friends and peers. Blog posts and talks (lightning or otherwise) are great ways to share you experiences and educate others.
+
+TODO: Expand?
 
 ## Questions?
