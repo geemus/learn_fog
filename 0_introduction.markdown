@@ -24,7 +24,8 @@ fog interfaces with various cloud services to simplify the process of using and 
 
 For the setup get a copy of `learn_fog.zip`, and unpack to find the rest of the files you need and instructions on how to use them.
 
-TODO: Fill in blanks, assuming ability to locally install run for most (use bundle package/etc to avoid needing internet), also update examples to use bundle exec and the like
+    $ cd learn_fog
+    !
 
     $ bundle install --local
     !
