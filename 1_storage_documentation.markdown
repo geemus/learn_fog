@@ -1,6 +1,6 @@
 # Documentation
 
-Cloud storage provides the capability of uploading files to a persistent remote store that will automatically handle keeping this data safe and available. Our first task will use this to store data, but first we will figure out how by referencing the services documentation.
+Cloud storage provides the capability of uploading files to a persistent remote store that will automatically handle keeping this data safe and available. Our first task will be to store data, but first we will figure out how by referencing the service's documentation.
 
 ## Amazon Simple Storage Solution (S3)
 
@@ -14,13 +14,11 @@ Amazon API guides provide details on available operations. We will first need to
 * Browse to the table of contents.
 * What operations are available for buckets?
 * Browse to the operation that seems most likely to create a bucket.
-* Which parameters are required?
-* Which are optional?
-* What other operations are available on buckets?
+* Which parameters are optional and required?
 
 ### fog Services
 
-Most of the time you should be able to get by without needing to refer to those docs, but it can be a good skill to have in your bag of tricks. Next we will see how this documentation relates to the code in fog.
+Most of the time you should be able to get by without needing to refer to those docs, but it is a valuable skill to have in your bag of tricks. Next we will see how this documentation relates to fog.
 
 We will want to check out the `service` that maps to S3, which lives with the other storage services. You can find it by opening `learn_fog/source/lib/fog/storage/aws.rb`, you will refer back to it for the next two sections.
 
@@ -30,8 +28,7 @@ First you will see some `requires` and `recognizes`, followed by `collections` a
 
 * Open the file corresponding to the request you found to create a bucket. You should be able to find it from its name in `learn_fog/source/lib/fog/storage/requests/aws/?`.
 * Find the method inside the `Real` module.
-* What arguments are required?
-* What arguments are optional?
+* What arguments are optional and required?
 * How does the documentation and method compare to the S3 documentation?
 
 ### Real
@@ -40,15 +37,11 @@ We can see that there is a mirror to what we found before, which helps integrate
 
 ### Mock
 
-You can refer back to the `Real` documentation block for usage details, but if you look at the `Mock` method itself you can see it is quite different.  Rather than sending a request to S3, the `Mock` method updates a hash in memory that simulates the remote state.
+You can refer back to the `Real` documentation for usage details, but if you look at the `Mock` method itself you can see it is quite different.  Rather than sending requests to S3, `Mock` methods update an in-memory hash that simulates the remote state.
 
 ### http://fog.io
 
-Another great place to find consolidated information is on [fog.io](http://fog.io), but all that info is also available in the source.
-
-    $ cd learn_fog/fog.io
-
-The front page is `index.html` and other pages can be navigated to from there.
+Another great place to find consolidated information is available locally [learn_fog/fog.io/index.html](fog.io/index.html) or online at [fog.io](http://fog.io).
 
 ## Highlights
 

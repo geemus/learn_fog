@@ -4,7 +4,9 @@ fog is the Ruby cloud services library, but what does that even mean?
 
 ## Cloud Services
 
-Cloud services have a few distinguishing characteristics. First, they provide on-demand service allowing you to add and remove resources as needed. Similarly, cloud services allow you to pay for usage, rather than by time period. This combination is very powerful, but comes at the cost of foregoing some control and knowledge of the actual resources.
+* Provide on-demand service allowing you to add and remove resources as needed.
+* Allow you to pay for usage, rather than by time period.
+* Flexibility comes at the cost of foregoing some control and knowledge of the actual resources.
 
 ## fog
 
@@ -33,7 +35,3 @@ For the setup get a copy of `learn_fog.zip`, and unpack to find the rest of the 
 ### Next!
 
 We will dig into how to figuring out how a particular service works in [Storage Documentation](1_storage_documentation.html).
-
-## Extra Credit
-
-* Install things directly on to your system so they will be available.

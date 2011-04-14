@@ -47,10 +47,16 @@ Dir.chdir('pkg/learn_fog')
 `git clone -q git://github.com/geemus/fog.git source`
 Dir.chdir('../..')
 
+# build website
+Formatador.redisplay("Building fog.io")
+Dir.chdir('pkg/learn_fog/source/docs')
+`bundle exec jekyll ../../fog.io`
+Dir.chdir('../../../..')
+
 # package learn_fog
 Formatador.redisplay("Packaging")
 Dir.chdir('pkg')
-`tar -zcvf learn_fog.tar.gz learn_fog`
+`tar -zcf learn_fog.tar.gz learn_fog`
 Dir.chdir('..')
 
 Formatador.redisplay("Build Complete!")
