@@ -1,4 +1,4 @@
-# Models
+# Storage Models
 
 Time to dig back into the code, refer back to `storage/aws`, but this time we will dig into the `collections` and `models`.
 
@@ -8,7 +8,11 @@ Just like last time, the first thing we need is something to contain our file. f
 
     $ bundle exec irb -r rubygems -r fog
     > Fog.mock!
-    > connection = Fog::Storage.new(:provider => 'AWS', :aws_access_key_id => 'fake_access_key_id', :aws_secret_access_key => 'fake_secret_access_key')
+    > connection = Fog::Storage.new(
+      :provider => 'AWS',
+      :aws_access_key_id => 'id',
+      :aws_secret_access_key => 'key'
+      )
     > connection.directories
     !
 

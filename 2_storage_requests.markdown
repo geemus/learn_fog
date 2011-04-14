@@ -22,7 +22,11 @@ Finally we can connect to the service.
 
 The first thing you need to know is how to connect to the service. You should have seen an error telling you what you omitted, but you can also find this information in the code. If we jump back to the service file you will notice `requires` and `recognizes`. These represent properties are needed to connect to the service and optional attributes which can be provided. In mock mode credentials must be provided, but can be invalid (or blank).
 
-    > connection = Fog::Storage.new(:provider => 'AWS', :aws_access_key_id => 'fake_access_key_id', :aws_secret_access_key => 'fake_secret_access_key')
+    > connection = Fog::Storage.new(
+      :provider => 'AWS',
+      :aws_access_key_id => 'id',
+      :aws_secret_access_key => 'key'
+      )
     !
 
 ## Requests
