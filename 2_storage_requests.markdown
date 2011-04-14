@@ -1,14 +1,16 @@
 # Storage Requests
 
-We will be using irb to experiment. `?` will designate a blank you should fill in and `!` will represent some output you should check out. We will return to this setup many times so you will save time and trouble if you leave the irb session open somewhere.
+We will be using irb to experiment. A `?` will designate a blank you should fill in and a `!` will represent some output you should check out. We will return to this setup many times so you will save time and trouble if you leave the irb session open somewhere.
 
 First we will boot irb and require fog.
 
+    $ cd learn_fog
+    $ bundle install --local
     $ bundle exec irb
     > require 'rubygems'
     > require 'fog'
 
-Rather than signing up for accounts, worrying about internet connections, etc; we will save some time by using the mocks. These provide us with an in-memory simulation of the service great for experimentation and testing.
+Rather than signing up for accounts, worrying about internet connections, etc; we will save some time by using the mocks. These provide us with an in-memory simulation of the service great for experimentation and testing. So the first thing we will do is instruct fog to run all subsequent requests in `Mock` mode.
 
     > Fog.mock!
     !
@@ -18,9 +20,11 @@ Finally we can connect to the service.
     > Fog::Storage.new(:provider => 'AWS')
     !
 
+You should see an error about what was omitted, these errors help guide you along without having to always refer back to documentation.
+
 ### Connection Parameters
 
-The first thing you need to know is how to connect to the service. You should have seen an error telling you what you omitted, but you can also find this information in the code. If we jump back to the service file you will notice `requires` and `recognizes`. These represent properties are needed to connect to the service and optional attributes which can be provided. In mock mode credentials must be provided, but can be invalid (or blank).
+The first thing you need to know is how to connect to the service. If we jump back to the service file you will notice `requires` and `recognizes`. These represent properties that are needed to connect to the service and optional attributes which can be provided. In mock mode credentials must be provided, but can be invalid (or blank).
 
     > connection = Fog::Storage.new(
       :provider => 'AWS',
@@ -38,7 +42,7 @@ Just as we can find lists of requests in the service file, we can also find this
 
 ## Mocks
 
-It is worth noting, however, that the mock coverage is not complete.  Some files, such as `learn_fog/lib/fog/storage/requests/aws/put_bucket_website` have no mocks defined. Call it now to see how this is handled.
+It is worth noting, however, that the mock coverage is not complete.  Some files, such as [learn_fog/lib/fog/storage/requests/aws/put_bucket_website](lib/fog/storage/requests/aws/put_bucket_website) have no mocks defined. Call it now to see how this is handled.
 
     > connection.put_bucket_website
     !
@@ -56,7 +60,7 @@ fog uses Excon (a pure-Ruby HTTP library built for speed) for requests so mocks 
 
 ### To the Races
 
-Now that we have our bucket, we are ready to store a file.
+Now that we have our bucket, we are ready to store a file. HINT: It is easiest to use a string for the body.
 
     > connection.put_object(?)
     !
@@ -71,10 +75,10 @@ That may be well and good, but how to we return to this data later?  For that we
     > connection.get_object(?)
     !
 
-    > connection.delete_bucket(?)
+    > connection.delete_object(?)
     !
 
-    > connection.delete_object(?)
+    > connection.delete_bucket(?)
     !
 
 ## Highlights
@@ -90,3 +94,5 @@ Now that we have seen how to dig around and do low level things you can probably
 ### Extra Credit
 
 * Try following these same steps with the 'google' provider.  It is pretty similar, but you'll notice some subtle differences throughout, especially in non-mocked modes due to differing consistency promises.
+* What changes from S3?
+* What remains the same?

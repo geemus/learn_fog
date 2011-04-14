@@ -26,11 +26,7 @@ fog interfaces with various cloud services to simplify the process of using and 
 
 For the setup get a copy of `learn_fog.zip`, and unpack to find the rest of the files you need and instructions on how to use them.
 
-    $ cd learn_fog
-    !
-
-    $ bundle install --local
-    !
+Browse to the unzipped directory and open [0_introduction.html](0_introduction.html).
 
 ### Next!
 

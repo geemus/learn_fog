@@ -1,6 +1,6 @@
 # fog Binary
 
-Now that we have gone to the trouble of doing everything via irb we will try again with another included piece that will make this simpler, the `fog` binary.
+Now that we have gone to the trouble of doing everything via irb we will try again with another included piece that will make this simpler, the `fog` binary. First, exit out of your irb session.  Now we will boot into fog.
 
     $ bundle exec fog
     !
@@ -13,7 +13,10 @@ As you can see it will complain about a lack of credentials, you can copy and pa
     $ providers
     !
 
-    $ AWS.collections
+    $ AWS[:storage]
+    !
+
+    $ AWS[:storage].collections
     !
 
     $ AWS[:storage].requests
@@ -31,4 +34,5 @@ Now that we have a faster/easier way to access stuff we will see what it is like
 
 ### Extra Credit
 
+* Try adding and removing keys and see how it effects providers.
 * Setup additional (non-default) credential sets and launch with `bundle exec fog #{key}`.

@@ -10,34 +10,32 @@ We will be using S3 to store a file, you can refer to local docs at [learn_fog/s
 
 Amazon API guides provide details on available operations. We will first need to create something to hold our files, S3 refers to this as a bucket.
 
-* Open `learn_fog/s3-api.pdf`
-* Browse to the table of contents.
-* What operations are available for buckets?
-* Browse to the operation that seems most likely to create a bucket.
+* Open [learn_fog/s3-api.pdf](s3-api.pdf)
+* Browse to 'Put Bucket' in the REST API documentation on page 78.
 * Which parameters are optional and required?
 
 ### fog Services
 
 Most of the time you should be able to get by without needing to refer to those docs, but it is a valuable skill to have in your bag of tricks. Next we will see how this documentation relates to fog.
 
-We will want to check out the `service` that maps to S3, which lives with the other storage services. You can find it by opening `learn_fog/source/lib/fog/storage/aws.rb`, you will refer back to it for the next two sections.
+We will want to check out the `service` that maps to S3, which lives with the other storage services. You can find it by opening [learn_fog/source/lib/fog/storage/aws.rb](source/lib/fog/storage/aws.rb), you will refer back to it for the next two sections.
 
 ### Requests
 
 First you will see some `requires` and `recognizes`, followed by `collections` and `models`, we will to these later. Our real goal is requests, you can see the `request_path` and a list of available requests.
 
-* Open the file corresponding to the request you found to create a bucket. You should be able to find it from its name in `learn_fog/source/lib/fog/storage/requests/aws/?`.
-* Find the method inside the `Real` module.
-* What arguments are optional and required?
+* Open the file corresponding to to put bucket, [learn_fog/source/lib/fog/storage/requests/aws/put_bucket.rb](source/lib/fog/storage/requests/aws/put_bucket.rb).
+* Find the method inside the `Real` class.
 * How does the documentation and method compare to the S3 documentation?
+* What arguments are optional and required?
 
 ### Real
 
-We can see that there is a mirror to what we found before, which helps integrate our knowledge of S3 into usage in fog. The first part documents the function, starting with a brief description of purpose, followed by a breakdown of parameters and return value. After this you will see the `Real` method itself, which defines how data is sent. For now, we will review the `Mock` implementation, which we will be using in our examples.
+We can see that there is a mirror between code and pdf, which helps integrate our knowledge of S3 into usage in fog. At the top of put_bucket the commented out section documents a brief description of purpose, followed by a breakdown of parameters and return value. After this you will see the `Real` method itself, which defines how data is sent. Now, we will review the `Mock` implementation, which we will be using in our examples.
 
 ### Mock
 
-You can refer back to the `Real` documentation for usage details, but if you look at the `Mock` method itself you can see it is quite different.  Rather than sending requests to S3, `Mock` methods update an in-memory hash that simulates the remote state.
+Rather than sending requests to S3, `Mock` methods simulate S3 locally.
 
 ## Highlights
 
@@ -45,7 +43,6 @@ You can refer back to the `Real` documentation for usage details, but if you loo
 * fog `requests` map closely to the services API calls and mirrors their documentation.
 * `Real` methods actually make API calls.
 * `Mock` methods update an in-memory representation of service state.
-* [fog.io](http://fog.io) collects available documentation and resources.
 
 ## Next!
 
@@ -53,7 +50,5 @@ In [Storage Requests](2_storage_requests.html) we will explore connecting to a s
 
 ### Extra Credit
 
-* What data does the `mock` method modify?
 * How will you get rid of the bucket?
-* What does the associated `Real` method look like?
-* What data does the associated `Mock` method modify?
+* What arguments are optional and required?
