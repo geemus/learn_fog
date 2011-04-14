@@ -70,7 +70,7 @@ Just like storage, compute has a number of specific methods. You can learn a lot
 
 ## Next!
 
-Last, but certainly not least, we will wrap up with some highlights and suggestions for how to continue your learning followed by some time for questions.
+Last, but certainly not least, we will wrap up with some highlights and suggestions for how to continue your learning followed by some time for questions in [Conclusion](7_conclusion.html).
 
 ### Extra Credit
 

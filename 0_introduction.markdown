@@ -32,7 +32,7 @@ For the setup get a copy of `learn_fog.zip`, and unpack to find the rest of the 
 
 ### Next!
 
-We will dig into how to figuring out how a particular service works in `1_storage_documentation.html`.
+We will dig into how to figuring out how a particular service works in [Storage Documentation](1_storage_documentation.html).
 
 ## Extra Credit
 

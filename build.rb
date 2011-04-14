@@ -22,7 +22,7 @@ Dir.glob('*.markdown').each do |file|
   if File.exists?(output_path)
     File.delete(output_path)
   end
-  `kramdown #{source_path} >> #{output_path}`
+  `kramdown #{source_path} --template template.html >> #{output_path}`
 end
 
 # copy files from resources

@@ -27,7 +27,7 @@ As you can see it will complain about a lack of credentials, you can copy and pa
 
 ## Next!
 
-Now that we have a faster/easier way to access stuff we will see what it is like to switch between providers in `5_local_storage`.
+Now that we have a faster/easier way to access stuff we will see what it is like to switch between providers in [Local Storage](5_local_storage.html).
 
 ### Extra Credit
 

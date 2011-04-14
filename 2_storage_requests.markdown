@@ -81,7 +81,7 @@ That may be well and good, but how to we return to this data later?  For that we
 
 ## Next!
 
-Now that we have seen how to dig around and do low level things you can probably imagine that swapping between providers might not be so easy.  Thankfully fog also has `collections` and `models` to ease the pain.  In `3_storage_models.html` we will use them to repeat these basic operations in a more universal way.
+Now that we have seen how to dig around and do low level things you can probably imagine that swapping between providers might not be so easy.  Thankfully fog also has `collections` and `models` to ease the pain.  In [Storage Models](3_storage_models.html) we will use them to repeat these basic operations in a more universal way.
 
 ### Extra Credit
 

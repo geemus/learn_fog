@@ -55,7 +55,7 @@ So far we have used methods of `collections` and `models` that are common across
 
 ## Next!
 
-Now that you have a good handle on storage we will take a foray into the magical world of compute in `5_compute_models`.  Here you will see how easy it can be to pick up new services after learning your first one.
+Now that you have a good handle on storage we will take a foray into the magical world of compute in [Compute Models](6_compute_models.html).  Here you will see how easy it can be to pick up new services after learning your first one.
 
 ### Extra Credit
 

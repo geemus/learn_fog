@@ -105,7 +105,7 @@ Nested inside each `directory` is a `files` `collection`, with much the same met
 
 ## Next!
 
-Now that we have done this from scratch in irb a couple times we will see how we how the fog command line can help out in `04_fog_binary`.
+Now that we have done this from scratch in irb a couple times we will see how we how the fog command line can help out in [fog Binary](4_fog_binary.html).
 
 ### Extra Credit
 

@@ -4,7 +4,7 @@ Cloud storage provides the capability of uploading files to a persistent remote 
 
 ## Amazon Simple Storage Solution (S3)
 
-We will be using S3 to store a file, you can refer to docs at `learn_fog/s3-api.pdf` or online at [S3 documentation](http://aws.amazon.com/documentation/s3).
+We will be using S3 to store a file, you can refer to local docs at [learn_fog/s3-api.pdf](s3-api.pdf) or online at [S3 documentation](http://aws.amazon.com/documentation/s3).
 
 ### Amazon API Guide
 
@@ -60,7 +60,7 @@ The front page is `index.html` and other pages can be navigated to from there.
 
 ## Next!
 
-In `2_storage_requests.html` we will explore connecting to a service and storing our data!
+In [Storage Requests](2_storage_requests.html) we will explore connecting to a service and storing our data!
 
 ### Extra Credit
 
