@@ -39,10 +39,6 @@ We can see that there is a mirror to what we found before, which helps integrate
 
 You can refer back to the `Real` documentation for usage details, but if you look at the `Mock` method itself you can see it is quite different.  Rather than sending requests to S3, `Mock` methods update an in-memory hash that simulates the remote state.
 
-### http://fog.io
-
-Another great place to find consolidated information is available locally [learn_fog/fog.io/index.html](fog.io/index.html) or online at [fog.io](http://fog.io).
-
 ## Highlights
 
 * Cloud services provide documentation about how to use their services.
