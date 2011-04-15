@@ -14,13 +14,17 @@ fog interfaces with various cloud services to simplify the process of using and 
 
 ## Agenda
 
-0. Introduction (done!) and Setup
-1. Documentation - explore the documentation a service provides and how to navigate it.
-2. Storage Requests - use a simulated service with simple requests and responses.
-3. Storage Models - use models and see the benefits of abstraction.
-4. Local Storage - use our storage models to load and store files locally
-5. Compute Models - use a simulated service to explore compute providers
-6. Conclusion - review, suggestions for further study and time for questions.
+0. **Introduction (done!) and Setup** *10 minutes*
+1. **Documentation** - explore the documentation a service provides and how to navigate it. *15 minutes*
+2. **Storage Requests** - use a simulated service with simple requests and responses. *25 minutes*
+3. **Storage Models** - use models and see the benefits of abstraction. *25 minutes*
+
+**Break** *30 minutes*
+
+4. **fog Binary** - learn about using the included binary file to manipulate cloud resources. *10 minutes*
+5. **Local Storage** - use our storage models to load and store files locally. *25 minutes*
+6. **Compute Models** - use a simulated service to explore compute providers. *25 minutes*
+7. **Conclusion** - review, suggestions for further study and time for questions. *15 minutes*
 
 > ### *Exercise 1: Setup*
 >

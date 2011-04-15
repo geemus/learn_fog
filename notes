@@ -12,17 +12,12 @@ scheduling?
 
 2.5hours = 150min
 
-  20min for 0_introduction & setup
-  20min for 1_documentation & 2_storage_requests
+  10min 0_introduction
+  15min 1_documentation
+  25min 2_storage_requests
+  25min 3_storage_models
 
-  10 minutes
-
-  20min 3_storage_models
-  20min 4_local_storage
-
-  10 minutes
-
-  20min for 5_compute_models
-  10min for 6_conclusion
-
-  20 minutes questions/padding
+  10min 4_fog_binary
+  25min 5_local_storage
+  25min for 6_compute_models
+  15min for 7_conclusion
