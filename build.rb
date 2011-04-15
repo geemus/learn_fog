@@ -41,6 +41,12 @@ Formatador.redisplay("Moving: slides")
 Formatador.redisplay("Packaging Gems")
 `BUNDLE_GEMFILE='#{File.expand_path(Dir.pwd)}/pkg/learn_fog/Gemfile' bundle package`
 
+# vendor bundler
+Formatador.redisplay("Vendoring Bundler")
+Dir.chdir('pkg/learn_fog')
+`gem fetch bundler`
+Dir.chdir('../..')
+
 # checkout a copy of source
 Formatador.redisplay("Cloning Source")
 Dir.chdir('pkg/learn_fog')

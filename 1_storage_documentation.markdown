@@ -6,28 +6,28 @@ Cloud storage provides the capability of uploading files to a persistent remote 
 
 We will be using S3 to store a file, you can refer to local docs at [learn_fog/s3-api.pdf](s3-api.pdf) or online at [S3 documentation](http://aws.amazon.com/documentation/s3).
 
-### Amazon API Guide
-
 Amazon API guides provide details on available operations. We will first need to create something to hold our files, S3 refers to this as a bucket.
 
-* Open [learn_fog/s3-api.pdf](s3-api.pdf)
-* Browse to 'Put Bucket' in the REST API documentation on page 78.
-* Which parameters are optional and required?
+> ### *Exercise 2: Amazon API Guide*
+>
+> * Open [learn_fog/s3-api.pdf](s3-api.pdf)
+> * Browse to 'Put Bucket' in the REST API documentation on page 78.
+> * Which parameters are optional and required?
 
 ### fog Services
 
 Most of the time you should be able to get by without needing to refer to those docs, but it is a valuable skill to have in your bag of tricks. Next we will see how this documentation relates to fog.
 
-We will want to check out the `service` that maps to S3, which lives with the other storage services. You can find it by opening [learn_fog/source/lib/fog/storage/aws.rb](source/lib/fog/storage/aws.rb), you will refer back to it for the next two sections.
+We will want to check out the `service` that maps to S3 and the requests it uses to support S3.
 
-### Requests
-
-First you will see some `requires` and `recognizes`, followed by `collections` and `models`, we will to these later. Our real goal is requests, you can see the `request_path` and a list of available requests.
-
-* Open the file corresponding to to put bucket, [learn_fog/source/lib/fog/storage/requests/aws/put_bucket.rb](source/lib/fog/storage/requests/aws/put_bucket.rb).
-* Find the method inside the `Real` class.
-* How does the documentation and method compare to the S3 documentation?
-* What arguments are optional and required?
+> ### *Exercise 3: fog AWS service*
+>
+> * Open [learn_fog/source/lib/fog/storage/aws.rb](source/lib/fog/storage/aws.rb), you will refer back to it for the next two sections.
+> * Skip down to `request_path`, this defines where in the code files will appear.
+> * Open the file for the put_bucket request.
+> * Find the method inside the `Real` class.
+> * How does the documentation and method compare to the S3 documentation?
+> * What arguments are optional and required?
 
 ### Real
 

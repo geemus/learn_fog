@@ -22,11 +22,10 @@ fog interfaces with various cloud services to simplify the process of using and 
 5. Compute Models - use a simulated service to explore compute providers
 6. Conclusion - review, suggestions for further study and time for questions.
 
-## Setup
-
-For the setup get a copy of `learn_fog.zip`, and unpack to find the rest of the files you need and instructions on how to use them.
-
-Browse to the unzipped directory and open [0_introduction.html](0_introduction.html).
+> ### *Exercise 1: Setup*
+>
+> * For the setup get a copy of `learn_fog.zip`, and unpack to find the rest of the files you need and instructions on how to use them.
+> * Browse to the unzipped directory and open [0_introduction.html](0_introduction.html) (this file).
 
 ### Next!
 

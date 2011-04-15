@@ -2,84 +2,78 @@
 
 We will be using irb to experiment. A `?` will designate a blank you should fill in and a `!` will represent some output you should check out. We will return to this setup many times so you will save time and trouble if you leave the irb session open somewhere.
 
-First we will boot irb and require fog.
 
-    $ cd learn_fog
-    $ bundle install --local
-    $ bundle exec irb
-    > require 'rubygems'
-    > require 'fog'
-
-Rather than signing up for accounts, worrying about internet connections, etc; we will save some time by using the mocks. These provide us with an in-memory simulation of the service great for experimentation and testing. So the first thing we will do is instruct fog to run all subsequent requests in `Mock` mode.
-
-    > Fog.mock!
-    !
-
-Finally we can connect to the service.
-
-    > Fog::Storage.new(:provider => 'AWS')
-    !
-
-You should see an error about what was omitted, these errors help guide you along without having to always refer back to documentation.
-
-### Connection Parameters
-
-The first thing you need to know is how to connect to the service. If we jump back to the service file you will notice `requires` and `recognizes`. These represent properties that are needed to connect to the service and optional attributes which can be provided. In mock mode credentials must be provided, but can be invalid (or blank).
-
-    > connection = Fog::Storage.new(
-      :provider => 'AWS',
-      :aws_access_key_id => 'id',
-      :aws_secret_access_key => 'key'
-      )
-    !
+> ### *Exercise 4: Initializing fog*
+>
+> First we will boot irb and require fog.
+>
+>     $ cd learn_fog
+>     $ bundle install --local
+>     $ bundle exec irb
+>     > require 'rubygems'
+>     > require 'fog'
+>
+> Rather than signing up for accounts, worrying about internet connections, etc; we will save some time by using the mocks. These provide us with an in-memory simulation of the service great for experimentation and testing. So the first thing we will do is instruct fog to run all subsequent requests in `Mock` mode.
+>
+>     > Fog.mock!
+>     !
+>
+> Finally we can connect to the service.
+>
+>     > Fog::Storage.new(:provider => 'AWS')
+>     !
+>
+> You should see an error about what was omitted, these errors help guide you along without having to always refer back to documentation.
+>
+> Open the file for the AWS service again and check the `requires` and `recognizes`, then we can fill in the blanks using this information.
+>
+>     > connection = Fog::Storage.new(
+>       :provider => 'AWS',
+>       :aws_access_key_id => 'id',
+>       :aws_secret_access_key => 'key'
+>       )
+>     !
 
 ## Requests
 
-Just as we can find lists of requests in the service file, we can also find this programmatically.
+Requests form the bridge between fog and the various cloud services. Now that we have a connection we can use it to interact with S3.
 
-    > connection.requests
-    !
-
-## Mocks
-
-It is worth noting, however, that the mock coverage is not complete.  Some files, such as [learn_fog/lib/fog/storage/requests/aws/put_bucket_website](lib/fog/storage/requests/aws/put_bucket_website) have no mocks defined. Call it now to see how this is handled.
-
-    > connection.put_bucket_website
-    !
-
-### Start Your Engines
-
-So it was a long and winding road, but we should be ready to create our bucket.  Refer back to the request method and you should have everything you need to fill in the blank.
-
-    > connection.put_bucket(?)
-    !
-
-### Responses
-
-fog uses Excon (a pure-Ruby HTTP library built for speed) for requests so mocks create fake Excon responses to emulate the `Real` behavior. Each response will three key parts: `status` will contain an integer status code, `headers` will contain a hash of metadata and `body` will contain a hash of the response contents (if any).
-
-### To the Races
-
-Now that we have our bucket, we are ready to store a file. HINT: It is easiest to use a string for the body.
-
-    > connection.put_object(?)
-    !
-
-### The Rest
-
-That may be well and good, but how to we return to this data later?  For that we need `get_bucket` and `get_object` respectively. And although mocks are in memory and will therefore be cleaned up automatically, it is still good practice to cleanup after yourself. For that we will need `delete_object` and `delete_bucket`.
-
-    > connection.get_bucket(?)
-    !
-
-    > connection.get_object(?)
-    !
-
-    > connection.delete_object(?)
-    !
-
-    > connection.delete_bucket(?)
-    !
+> ### *Exercise 5: Getting Your Hands Dirty*
+>
+> We should be ready to create our bucket. Refer back to the request method to fill in the blank.
+>
+>     > response = connection.put_bucket(?)
+>     !
+>
+> fog uses Excon (a pure-Ruby HTTP library built for speed) for requests, so mocks create fake Excon responses to emulate the `Real` behavior.
+>
+> Each response will three key methods: `status` will return an integer status code, `headers` will return a hash of metadata and `body` will return a hash of the response contents (if any).
+>
+> Call these methods to get back relevant data from the response.
+>
+> Now that we have our bucket, we are ready to store a file. HINT: It is easiest to use a string for the body.
+>
+>     > connection.put_object(?)
+>     !
+>
+> That may be well and good, but how to we return to this data later?  For that we need `get_bucket` and `get_object` respectively. And although mocks are in memory and will therefore be cleaned up automatically, it is still good practice to cleanup after yourself. For that we will need `delete_object` and `delete_bucket`.
+>
+>     > connection.get_bucket(?)
+>     !
+>
+>     > connection.get_object(?)
+>     !
+>
+>     > connection.delete_object(?)
+>     !
+>
+>     > connection.delete_bucket(?)
+>     !
+>
+> Note: mock coverage is not complete.  Some files, such as [learn_fog/lib/fog/storage/requests/aws/put_bucket_website](lib/fog/storage/requests/aws/put_bucket_website) have no mocks defined. Call it now to see how this is handled.
+>
+>     > connection.put_bucket_website
+>     !
 
 ## Highlights
 

@@ -6,16 +6,23 @@ Now that you have experimented with several providers and services you should ha
 
 We will leave some time for questions and discussion, but first I want to leave you with some suggestions on how to continue your learning.
 
-### Extra Credit
 
-Now that you have an understanding about how these peices fit together there are a number of things you could do, here are a few suggestions for further learning:
+> ### *Exercise 15: Questions?*
 
-* Check out the consolidated resources at [fog.io](http://fog.io).
-* Try out more of the services, find out what works best for you.
-* Contribute to your favorite services or add one that was left out.
-* Report issues and submit pull requests.
-* Spread the love by sharing your cloud experiences with friends and peers. Blog posts and talks (lightning or otherwise) are great ways to share you experiences and educate others.
-* Proudly display stickers.
-* Earn contributer (grey) and commiter (black) shirts!
-
-## Questions?
+> ### *Exercise 16: Continuing Education*
+>
+> Now that you have an understanding about how these peices fit together there are a number of things you could do, here are a few suggestions for further learning:
+>
+> Check out the consolidated resources at [fog.io](http://fog.io).
+>
+> Try out more of the services, find out what works best for you.
+>
+> Contribute to your favorite services or add one that was left out.
+>
+> Report issues and submit pull requests.
+>
+> Spread the love by sharing your cloud experiences with friends and peers. Blog posts and talks (lightning or otherwise) are great ways to share you experiences and educate others.
+>
+> Proudly display stickers.
+>
+> Earn contributer (grey) and commiter (black) shirts!
