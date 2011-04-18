@@ -1,0 +1,2 @@
+!SLIDE
+# fog: Local Storage

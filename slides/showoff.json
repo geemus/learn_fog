@@ -1,1 +1,13 @@
-{ "name": "Learn fog", "sections": [ {"section":"0_introduction"} ]}
+{
+  "name": "Learn fog",
+  "sections": [
+    {"section":"0_introduction"},
+    {"section":"1_storage_documentation"},
+    {"section":"2_storage_requests"},
+    {"section":"3_storage_models"},
+    {"section":"4_fog_binary"},
+    {"section":"5_local_storage"},
+    {"section":"6_compute_models"},
+    {"section":"7_conclusion"}
+  ]
+}
