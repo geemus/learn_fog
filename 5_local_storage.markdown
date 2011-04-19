@@ -2,7 +2,7 @@
 
 Now that we have explored mock requests and models for storage we will try the local storage provider. This provider allows us to choose a local directory to treat like a storage service and save/load files.
 
-> ### *Exercise 11: Utilizing Local Storage*
+> ### *Exercise 11: Getting Started with Local Storage*
 >
 > First, exit the fog binary and create a directory to use for our local store.
 >
