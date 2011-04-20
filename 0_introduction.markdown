@@ -14,7 +14,7 @@ fog interfaces with various cloud services to simplify the process of using and 
 
 ## Agenda
 
-0. **Introduction (done!) and Setup** *10 minutes*
+0. **Introduction** - intro to cloud and setup. *10 minutes*
 1. **Documentation** - explore the documentation a service provides and how to navigate it. *15 minutes*
 2. **Storage Requests** - use a simulated service with simple requests and responses. *25 minutes*
 3. **Storage Models** - use models and see the benefits of abstraction. *25 minutes*

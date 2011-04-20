@@ -21,7 +21,7 @@ You can always follow the `model_path` from the service to find model files and 
 Note that `models` rely on `requests` to do their job, just like we did earlier.
 This allows them to hook into the mocking infrastructure as well, and if there is ever anything that the models do not provide you are free to use `requests` to fill in the blanks.
 
-> ### *Exercise 7: Exploring Directories*
+> ### *Exercise 7: Exploring Directories `Collection`*
 >
 > * Open [learn_fog/source/storage/models/aws/directories.rb](source/storage/models/aws/directories.rb).
 > * First, see the call to `model`, this defines what model to use when you instantiating collection members.
@@ -30,7 +30,7 @@ This allows them to hook into the mocking infrastructure as well, and if there i
 > * Notice that there is no `Real` vs `Mock` distinction. It is not needed at this level because it can piggy back on the requests.
 > * `directories` inherits from `Fog::Collection`. You will not need to know to much more than that, but you can dig into if you would like at [learn_fog/source/lib/fog/core/collection.rb](source/lib/fog/core/collection.rb).
 
-> ### *Exercise 8: Exploring Directory*
+> ### *Exercise 8: Exploring Directory `Model`*
 >
 > You may have noticed that as we were working through things earlier you would usually refer to `directories` but that they returned one or more `directory`.
 >
@@ -40,7 +40,7 @@ This allows them to hook into the mocking infrastructure as well, and if there i
 > * `save` builds up options from the attributes and then calls a request, just as we did.
 > * What about `create`?
 
-> ### *Exercise 9: Use Your Learning*
+> ### *Exercise 9: Putting it All Together*
 >
 > Nested inside each `directory` is a `files` `collection`, with much the same methods as the directory itself. You can open up the file to browse, or just experiment and let errors guide the way.
 >

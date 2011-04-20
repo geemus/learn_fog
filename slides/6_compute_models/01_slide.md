@@ -6,3 +6,11 @@
 
 !SLIDE
 ## *Exercise 14: Exploring Compute*
+
+!SLIDE bullets incremental
+# Compute Models
+## *Highlights*
+
+* `Fog::Compute` facilitates using various services.
+* Compute is rather complex to work with.
+* Compute has extra capabilies above abstraction.

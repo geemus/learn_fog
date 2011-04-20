@@ -1,4 +1,4 @@
-# Documentation
+# Storage Documentation
 
 Cloud storage provides the capability of uploading files to a persistent remote store that will automatically handle keeping this data safe and available. Typical use cases are storing customer avatars, logfiles or other data that should be safely stored and highly accessible. Our first task will be to store some data, but first we will figure out how by referencing the service's documentation.
 
