@@ -26,3 +26,5 @@ We will leave some time for questions and discussion, but first I want to leave 
 > Proudly display stickers.
 >
 > Earn contributer (grey) and commiter (black) shirts!
+>
+> Share and improve [learn_fog](http://github.com/geemus/learn_fog)

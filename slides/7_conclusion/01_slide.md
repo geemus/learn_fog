@@ -14,3 +14,4 @@
 * Bugs || Patches: github.com/geemus/fog/issues
 * Perks: Stickers and Tshirts
 * Twitter: @fog and @geemus
+* Class: github.com/geemus/learn_fog
