@@ -1,6 +1,6 @@
 # Compute Models
 
-Cloud compute provides the capability to request remote compute power as it is needed. We will use a `mock` provider to explore how to use these resources.
+Cloud compute provides the capability to request remote compute power as it is needed. Typical use cases range from server usage similar to traditional managed hasting all the way through spinning up and down servers to provide utility computing for periodic cpu bound work. We will use a `mock` provider to explore how to use these resources.
 
 > ### *Exercise 13: Learn Compute the Hard Way*
 >
