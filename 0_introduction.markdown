@@ -28,7 +28,8 @@ fog interfaces with various cloud services to simplify the process of using and 
 
 > ### *Exercise 1: Setup*
 >
-> * For the setup get a copy of `learn_fog.zip`, and unpack to find the rest of the files you need and instructions on how to use them.
+> * For the setup get a copy of `learn_fog.tar.gz`, and unpack to find the rest of the files you need and instructions on how to use them.
+> * Here is how you can do this on typical linux systems `tar -xzf`.
 > * Browse to the unzipped directory and open [0_introduction.html](0_introduction.html) (this file).
 
 ### Next!
