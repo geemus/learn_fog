@@ -18,7 +18,9 @@ GEM
     liquid (2.2.2)
     maruku (0.6.0)
       syntax (>= 1.0.0)
-    nokogiri (1.4.4)
+    mini_portile2 (2.4.0)
+    nokogiri (1.10.3)
+      mini_portile2 (~> 2.4.0)
     rack (1.2.2)
     showoff (0.4.1)
       bluecloth
