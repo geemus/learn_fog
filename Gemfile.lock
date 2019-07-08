@@ -19,20 +19,25 @@ GEM
     maruku (0.6.0)
       syntax (>= 1.0.0)
     mini_portile2 (2.4.0)
+    mustermann (1.0.3)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
-    rack (1.2.2)
+    rack (2.0.7)
+    rack-protection (2.0.5)
+      rack
     showoff (0.4.1)
       bluecloth
       gli (>= 1.2.5)
       json
       nokogiri
       sinatra
-    sinatra (1.2.3)
-      rack (~> 1.1)
-      tilt (>= 1.2.2, < 2.0)
+    sinatra (2.0.5)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.5)
+      tilt (~> 2.0)
     syntax (1.0.0)
-    tilt (1.2.2)
+    tilt (2.0.9)
 
 PLATFORMS
   ruby
